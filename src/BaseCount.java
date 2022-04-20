@@ -2,8 +2,8 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 public class BaseCount {
-    private String m;
-    BaseCount(String m)
+    String m;
+    public String Count()
     {
         ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
         ScriptEngine scriptEngine = scriptEngineManager.getEngineByName("nashorn");
@@ -13,10 +13,15 @@ public class BaseCount {
 
         try {
             String result = String.valueOf(scriptEngine.eval(expression));
-            System.out.println(result);
+            return result;
         } catch (ScriptException e) {
-
+            return "";
         }
 
+
+    }
+    BaseCount(String n)
+    {
+        m=n;
     }
 }

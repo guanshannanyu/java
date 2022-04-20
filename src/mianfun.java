@@ -1,29 +1,36 @@
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-public class Main {
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+public class mianfun {
     public static void main(String[] args) {
 
 
-        Frame win=new Frame("ti计算器");
+        JFrame win=new JFrame("ti计算器");
         win.setSize(600,700);
         win.setLocation(300,200);
 
+
+
         //输入文本框
-        Panel text=new Panel();
-        text.add(new TextField(80));
+        JPanel text=new JPanel();
+        JTextField tex=new JTextField(50);
+        text.add(tex);
         win.add(text,BorderLayout.NORTH);
 
         //按钮
-        Panel butt=new Panel();
+        JPanel butt=new JPanel();
         butt.setLayout(new GridLayout(8,5,20,20));
         //DEC
 
-        Button DEC=new Button("DEC");
-        Button HEX=new Button("HEX");
-        Button OCT=new Button("OCT");
-        Button OFF=new Button("OFF");
-        Button ON_C=new Button("ON/C");
+        JButton DEC=new JButton("DEC");
+        JButton HEX=new JButton("HEX");
+        JButton OCT=new JButton("OCT");
+        JButton OFF=new JButton("OFF");
+        JButton ON_C=new JButton("ON/C");
 
         butt.add(DEC);
         butt.add(HEX);
@@ -31,11 +38,11 @@ public class Main {
         butt.add(OFF);
         butt.add(ON_C);
 
-        Button STO=new Button("STO");
-        Button RCL=new Button("RCL");
-        Button SUM=new Button("SUM");
-        Button ZUOKUOHAO=new Button("(");
-        Button YOUKUOHAO=new Button(")");
+        JButton STO=new JButton("STO");
+        JButton RCL=new JButton("RCL");
+        JButton SUM=new JButton("SUM");
+        JButton ZUOKUOHAO=new JButton("(");
+        JButton YOUKUOHAO=new JButton(")");
 
         butt.add(STO);
         butt.add(RCL);
@@ -43,11 +50,11 @@ public class Main {
         butt.add(ZUOKUOHAO);
         butt.add(YOUKUOHAO);
 
-        Button SHF=new Button("SHF");
-        Button d=new Button("d");
-        Button E=new Button("E");
-        Button F=new Button("F");
-        Button K=new Button("K");
+        JButton SHF=new JButton("SHF");
+        JButton d=new JButton("d");
+        JButton E=new JButton("E");
+        JButton F=new JButton("F");
+        JButton K=new JButton("K");
 
         butt.add(d);
         butt.add(E);
@@ -57,11 +64,11 @@ public class Main {
 
 
 
-        Button SC=new Button("SC");
-        Button A=new Button("A");
-        Button b=new Button("b");
-        Button C=new Button("C");
-        Button chu=new Button("÷");
+        JButton SC=new JButton("SC");
+        JButton A=new JButton("A");
+        JButton b=new JButton("b");
+        JButton C=new JButton("C");
+        JButton chu=new JButton("÷");
 
         butt.add(SC);
         butt.add(A);
@@ -69,11 +76,11 @@ public class Main {
         butt.add(C);
         butt.add(chu);
 
-        Button OR=new Button("OR");
-        Button SEVEN=new Button("7");
-        Button EIGHT=new Button("8");
-        Button NINE=new Button("9");
-        Button CHEN=new Button("×");
+        JButton OR=new JButton("OR");
+        JButton SEVEN=new JButton("7");
+        JButton EIGHT=new JButton("8");
+        JButton NINE=new JButton("9");
+        JButton CHEN=new JButton("×");
 
         butt.add(OR);
         butt.add(SEVEN);
@@ -81,11 +88,11 @@ public class Main {
         butt.add(NINE);
         butt.add(CHEN);
 
-        Button AND=new Button("AND");
-        Button FOUR=new Button("4");
-        Button FIVE=new Button("5");
-        Button SIX=new Button("6");
-        Button JIAN=new Button("-");
+        JButton AND=new JButton("AND");
+        JButton FOUR=new JButton("4");
+        JButton FIVE=new JButton("5");
+        JButton SIX=new JButton("6");
+        JButton JIAN=new JButton("-");
 
         butt.add(AND);
         butt.add(FOUR);
@@ -93,11 +100,11 @@ public class Main {
         butt.add(SIX);
         butt.add(JIAN);
 
-        Button XOR=new Button("XOR");
-        Button ONE=new Button("1");
-        Button TWO=new Button("2");
-        Button THREE=new Button("3");
-        Button JIA=new Button("+");
+        JButton XOR=new JButton("XOR");
+        JButton ONE=new JButton("1");
+        JButton TWO=new JButton("2");
+        JButton THREE=new JButton("3");
+        JButton JIA=new JButton("+");
 
         butt.add(XOR);
         butt.add(ONE);
@@ -105,11 +112,11 @@ public class Main {
         butt.add(THREE);
         butt.add(JIA);
 
-        Button CE=new Button("CE");
-        Button ZERO=new Button("0");
-        Button POINT=new Button(".");
-        Button JIACHU=new Button("+/-");
-        Button EQU=new Button("=");
+        JButton CE=new JButton("CE");
+        JButton ZERO=new JButton("0");
+        JButton POINT=new JButton(".");
+        JButton JIACHU=new JButton("+/-");
+        JButton EQU=new JButton("=");
 
         butt.add(CE);
         butt.add(ZERO);
@@ -120,10 +127,26 @@ public class Main {
 
         //事件监听
         ActionListener listener=new ActionListener() {
+            String BiaoDaShi="";
             @Override
             public void actionPerformed(ActionEvent e) {
-                String BiaoDaShi=e.getActionCommand();
-                BaseCount count1=new BaseCount(BiaoDaShi);
+
+                String temp=e.getActionCommand();
+                System.out.println(temp);
+
+                if(temp!="=")
+                {
+                    BiaoDaShi+=temp;
+                    tex.setText(BiaoDaShi);
+                }
+                else {
+                    System.out.println(BiaoDaShi);
+                    BaseCount count1=new BaseCount(BiaoDaShi);
+                    tex.setText(count1.Count());
+                }
+
+
+
 
 
 
@@ -193,6 +216,7 @@ public class Main {
 
 
         win.addWindowListener(new WindowAdapter() {
+
             @Override
             public void windowOpened(WindowEvent e) {
                 super.windowOpened(e);
