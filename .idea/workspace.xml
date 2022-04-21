@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc089fea-0f43-4dc5-95fd-1ca3859f199b" name="Changes" comment="界面已完成，尚未完成算法">
-      <change afterPath="$PROJECT_DIR$/src/mianfun.java" afterDir="false" />
+    <list default="true" id="bc089fea-0f43-4dc5-95fd-1ca3859f199b" name="Changes" comment="界面已完成，基本运算已经完成">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BaseCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mianfun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mianfun.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +36,22 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/java大作业/untitled/src",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.mianfun">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\java大作业\untitled\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\java大作业\untitled\src" />
+      <recent name="E:\java大作业\untitled\src\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.java.mianfun">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="untitled" />
@@ -58,7 +68,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.mianfun" />
+        <item itemvalue="Application.java.mianfun" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -72,7 +82,8 @@
       <option name="presentableId" value="Default" />
       <updated>1650158047189</updated>
       <workItem from="1650158049482" duration="626000" />
-      <workItem from="1650423764489" duration="21361000" />
+      <workItem from="1650423764489" duration="25004000" />
+      <workItem from="1650543554848" duration="2561000" />
     </task>
     <task id="LOCAL-00001" summary="界面已完成，尚未完成算法">
       <created>1650458349907</created>
@@ -81,7 +92,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650458349907</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="界面已完成，基本运算已经完成">
+      <created>1650465842656</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650465842656</updated>
+    </task>
+    <task id="LOCAL-00003" summary="界面已完成，基本运算已经完成">
+      <created>1650465967719</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1650465967719</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +125,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="界面已完成，尚未完成算法" />
-    <option name="LAST_COMMIT_MESSAGE" value="界面已完成，尚未完成算法" />
+    <MESSAGE value="界面已完成，基本运算已经完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="界面已完成，基本运算已经完成" />
   </component>
 </project>
