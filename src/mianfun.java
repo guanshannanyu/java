@@ -138,55 +138,59 @@ public class mianfun {
             String xianshi="";
             int tai=1;
             int lingpai=1;
+            String bianliang="";
+            int jinzhi=10;
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 String temp=e.getActionCommand();
                 System.out.println(temp);
 
-                if((tai==1)&&(temp=="ON/C")&&lingpai==1)
+                if((tai==1)&&(temp=="ON/C"))
                 {
                     tai=0;
                     tex.setText("0");
-                    lingpai--;
+
 
                 }
-                if((tai==0)&&(temp=="ON/C")&&lingpai==1)
+                if((tai==0)&&(temp=="OFF"))
                 {
                     tai=1;
                     tex.setText("");
-                    lingpai--;
                 }
 
-                if((temp!="=")&&(tai==0)&&(temp!="ON/C"))
+                if(jinzhi==10)
                 {
-                    if(temp=="×")
+                    if((temp!="=")&&(tai==0)&&(temp!="ON/C")&&temp!="OFF")
                     {
-                        BiaoDaShi+="*";
-                        xianshi+="×";
-                    }
-                    else if(temp=="÷")
-                    {
-                        BiaoDaShi+="/";
-                        xianshi+="÷";
-                    }
-                    else
-                    {
-                        BiaoDaShi+=temp;
-                        xianshi+=temp;
-                    }
+                        if(temp=="×")
+                        {
+                            BiaoDaShi+="*";
+                            xianshi+="×";
+                        }
+                        else if(temp=="÷")
+                        {
+                            BiaoDaShi+="/";
+                            xianshi+="÷";
+                        }
+                        else
+                        {
 
-                    tex.setText(xianshi);
+                            BiaoDaShi+=temp;
+                            xianshi+=temp;
+                        }
+
+                        tex.setText(xianshi);
+                    }
+                    else if((temp!="ON/C")&&temp!="OFF"){
+                        System.out.println(BiaoDaShi);
+                        BaseCount count1=new BaseCount(BiaoDaShi);
+                        tex.setText(count1.Count());
+                    }
                 }
-                else if(temp!="ON/C"){
-                    System.out.println(BiaoDaShi);
-                    BaseCount count1=new BaseCount(BiaoDaShi);
-                    tex.setText(count1.Count());
-                }
-                if(temp=="ON/C")
-                {
-                    lingpai++;
-                }
+
+
+
 
 
 
