@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc089fea-0f43-4dc5-95fd-1ca3859f199b" name="Changes" comment="界面已完成，基本运算已经完成,完成开关功能">
+    <list default="true" id="bc089fea-0f43-4dc5-95fd-1ca3859f199b" name="Changes" comment="界面已完成，基本运算已经完成,完成开关功能,十进制功能告一段落">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mianfun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mianfun.java" afterDir="false" />
     </list>
@@ -82,7 +82,7 @@
       <updated>1650158047189</updated>
       <workItem from="1650158049482" duration="626000" />
       <workItem from="1650423764489" duration="25004000" />
-      <workItem from="1650543554848" duration="4321000" />
+      <workItem from="1650543554848" duration="5355000" />
     </task>
     <task id="LOCAL-00001" summary="界面已完成，尚未完成算法">
       <created>1650458349907</created>
@@ -112,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650546454310</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="界面已完成，基本运算已经完成,完成开关功能,十进制功能告一段落">
+      <created>1650547980138</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650547980138</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +140,7 @@
     <MESSAGE value="界面已完成，尚未完成算法" />
     <MESSAGE value="界面已完成，基本运算已经完成" />
     <MESSAGE value="界面已完成，基本运算已经完成,完成开关功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="界面已完成，基本运算已经完成,完成开关功能" />
+    <MESSAGE value="界面已完成，基本运算已经完成,完成开关功能,十进制功能告一段落" />
+    <option name="LAST_COMMIT_MESSAGE" value="界面已完成，基本运算已经完成,完成开关功能,十进制功能告一段落" />
   </component>
 </project>

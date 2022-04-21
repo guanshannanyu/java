@@ -159,35 +159,57 @@ public class mianfun {
                     tex.setText("");
                 }
 
-                if(jinzhi==10)
+
+                //如果开机了
+                if(tai==0)
                 {
-                    if((temp!="=")&&(tai==0)&&(temp!="ON/C")&&temp!="OFF")
+                    //八进
+                    if(temp=="OCT")
                     {
-                        if(temp=="×")
-                        {
-                            BiaoDaShi+="*";
-                            xianshi+="×";
-                        }
-                        else if(temp=="÷")
-                        {
-                            BiaoDaShi+="/";
-                            xianshi+="÷";
-                        }
-                        else
-                        {
 
-                            BiaoDaShi+=temp;
-                            xianshi+=temp;
-                        }
-
-                        tex.setText(xianshi);
                     }
-                    else if((temp!="ON/C")&&temp!="OFF"){
-                        System.out.println(BiaoDaShi);
-                        BaseCount count1=new BaseCount(BiaoDaShi);
-                        tex.setText(count1.Count());
+
+
+
+
+                    //十进制
+                    if(jinzhi==10)
+                    {
+                        if((temp!="=")&&(tai==0)&&(temp!="ON/C")&&temp!="OFF")
+                        {
+                            if(temp=="×")
+                            {
+                                BiaoDaShi+="*";
+                                xianshi+="×";
+                            }
+                            else if(temp=="÷")
+                            {
+                                BiaoDaShi+="/";
+                                xianshi+="÷";
+                            }
+                            else
+                            {
+                                bianliang+=temp;
+
+                                BiaoDaShi+=temp;
+                                xianshi+=temp;
+                            }
+
+                            tex.setText(xianshi);
+                        }
+                        else if((temp!="ON/C")&&temp!="OFF"){
+                            System.out.println(BiaoDaShi);
+                            BaseCount count1=new BaseCount(BiaoDaShi);
+                            BiaoDaShi=""+count1.Count();
+                            xianshi=""+count1.Count();
+                            System.out.println(BiaoDaShi);
+                            System.out.println(xianshi);
+                            tex.setText(count1.Count());
+                        }
                     }
                 }
+
+
 
 
 
