@@ -163,19 +163,22 @@ public class mianfun {
                 //如果开机了
                 if(tai==0)
                 {
-                    //八进
+                    //八进制改动
                     if(temp=="OCT")
+                    {
+                        jinzhi=8;
+                    }
+                    if(jinzhi==8)
                     {
 
                     }
 
 
 
-
                     //十进制
                     if(jinzhi==10)
                     {
-                        if((temp!="=")&&(tai==0)&&(temp!="ON/C")&&temp!="OFF")
+                        if((temp!="=")&&(tai==0)&&(temp!="ON/C"))
                         {
                             if(temp=="×")
                             {
