@@ -77,13 +77,13 @@ public class tryone {
         butt.add(OFF);
         butt.add(ON_C);
 
-        JButton STO=new JButton("STO");
+        JButton SHR=new JButton("SHR");
         JButton RCL=new JButton("RCL");
         JButton SUM=new JButton("SUM");
         JButton ZUOKUOHAO=new JButton("(");
         JButton YOUKUOHAO=new JButton(")");
 
-        butt.add(STO);
+        butt.add(SHR);
         butt.add(RCL);
         butt.add(SUM);
         butt.add(ZUOKUOHAO);
@@ -290,20 +290,36 @@ public class tryone {
 
 
                     }
+                    if(temp=="1`SC")
+                    {
+                        if(bianliangjinzhi==10)
+                        {
+                            xianshi=""+~Integer.parseInt(bianliang);
+                            tex.setText(xianshi);
+                            System.out.println(bianliang);
+                        }
+                        if(bianliangjinzhi==16)
+                        {
+                            xianshi=""+~Integer.parseInt(bianliang,16);
+                            xianshi=Integer.toHexString(Integer.parseInt( xianshi));
+                            tex.setText(xianshi);
+                            System.out.println(bianliang);
+                        }
+                    }
 
 
 
                     if(jinzhi==10)
                     {
 
-                        if(Character.isDigit(temp.charAt(0)))
+                        if(temp=="0"||temp=="1"||temp=="2"||temp=="3"||temp=="4"||temp=="5"||temp=="6"||temp=="7"||temp=="8"||temp=="9")
                         {
                             bianliang+=temp;
                             xianshi+=temp;
                             tex.setText(xianshi);
                             bianliangjinzhi=10;
                         }
-                        if((temp=="A")||(temp=="b")||(temp=="C")||(temp=="d")||(temp=="E")||(temp=="K"))
+                        if((temp=="A")||(temp=="b")||(temp=="C")||(temp=="d")||(temp=="E")||(temp=="F"))
                         {
                             bianliang+=temp;
                             xianshi+=temp;
@@ -337,6 +353,46 @@ public class tryone {
                             xianshi="";
                             bianliang="";
                             //System.out.println(BiaoDaShi);
+                        }
+                        if(temp=="AND")
+                        {
+                            BiaoDaShi+=bianliang;
+                            BiaoDaShi+="&";
+                            tex.setText(xianshi);
+                            xianshi="";
+                            bianliang="";
+                        }
+                        if(temp=="OR")
+                        {
+                            BiaoDaShi+=bianliang;
+                            BiaoDaShi+="|";
+                            tex.setText(xianshi);
+                            xianshi="";
+                            bianliang="";
+                        }
+                        if(temp=="XOR")
+                        {
+                            BiaoDaShi+=bianliang;
+                            BiaoDaShi+="^";
+                            tex.setText(xianshi);
+                            xianshi="";
+                            bianliang="";
+                        }
+                        if(temp=="SHF")
+                        {
+                            BiaoDaShi+=bianliang;
+                            BiaoDaShi+="<<";
+                            tex.setText(xianshi);
+                            xianshi="";
+                            bianliang="";
+                        }
+                        if(temp=="SHR")
+                        {
+                            BiaoDaShi+=bianliang;
+                            BiaoDaShi+=">>";
+                            tex.setText(xianshi);
+                            xianshi="";
+                            bianliang="";
                         }
                         if(temp==".")
                         {
@@ -381,7 +437,7 @@ public class tryone {
                     if(jinzhi==16)
                     {
 
-                        if(Character.isDigit(temp.charAt(0)))
+                        if(temp=="0"||temp=="1"||temp=="2"||temp=="3"||temp=="4"||temp=="5"||temp=="6"||temp=="7"||temp=="8"||temp=="9")
                         {
                             bianliang+=temp;
                             xianshi+=temp;
@@ -389,7 +445,7 @@ public class tryone {
                             //System.out.println(BiaoDaShi);
                             bianliangjinzhi=16;
                         }
-                        if((temp=="A")||(temp=="b")||(temp=="C")||(temp=="d")||(temp=="E")||(temp=="K"))
+                        if((temp=="A")||(temp=="b")||(temp=="C")||(temp=="d")||(temp=="E")||(temp=="F"))
                         {
                             bianliang+=temp;
                             xianshi+=temp;
@@ -438,6 +494,66 @@ public class tryone {
                             xianshi="";
                             bianliang="";
                             //System.out.println(BiaoDaShi);
+                        }
+                        if(temp=="AND")
+                        {
+                            if(bianliang!="")
+                            {
+                                bianliang=""+Integer.parseInt(bianliang,16);
+                            }
+                            BiaoDaShi+=bianliang;
+                            BiaoDaShi+="&";
+                            tex.setText(xianshi);
+                            xianshi="";
+                            bianliang="";
+                        }
+                        if(temp=="OR")
+                        {
+                            if(bianliang!="")
+                            {
+                                bianliang=""+Integer.parseInt(bianliang,16);
+                            }
+                            BiaoDaShi+=bianliang;
+                            BiaoDaShi+="|";
+                            tex.setText(xianshi);
+                            xianshi="";
+                            bianliang="";
+                        }
+                        if(temp=="XOR")
+                        {
+                            if(bianliang!="")
+                            {
+                                bianliang=""+Integer.parseInt(bianliang,16);
+                            }
+                            BiaoDaShi+=bianliang;
+                            BiaoDaShi+="^";
+                            tex.setText(xianshi);
+                            xianshi="";
+                            bianliang="";
+                        }
+                        if(temp=="SHF")
+                        {
+                            if(bianliang!="")
+                            {
+                                bianliang=""+Integer.parseInt(bianliang,16);
+                            }
+                            BiaoDaShi+=bianliang;
+                            BiaoDaShi+="<<";
+                            tex.setText(xianshi);
+                            xianshi="";
+                            bianliang="";
+                        }
+                        if(temp=="SHR")
+                        {
+                            if(bianliang!="")
+                            {
+                                bianliang=""+Integer.parseInt(bianliang,16);
+                            }
+                            BiaoDaShi+=bianliang;
+                            BiaoDaShi+=">>";
+                            tex.setText(xianshi);
+                            xianshi="";
+                            bianliang="";
                         }
                         if(temp==".")
                         {
@@ -512,7 +628,7 @@ public class tryone {
         OFF.addActionListener(listener);
         ON_C.addActionListener(listener);
 
-        STO.addActionListener(listener);
+        SHR.addActionListener(listener);
         RCL.addActionListener(listener);
         SUM.addActionListener(listener);
         ZUOKUOHAO.addActionListener(listener);
