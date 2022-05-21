@@ -173,10 +173,11 @@ public class tryone {
             String xianshi="";
 
             int tai=1;
-            int lingpai=1;
+
             String bianliang="";
             int jinzhi=10;
             String jieguo="";
+            int bianliangjinzhi=10;
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -187,7 +188,22 @@ public class tryone {
                 {
                     tai=0;
                     tex.setText("0");
+                    jieguo="";
+                    bianliangjinzhi=10;
+                }
+                else if((tai==0)&&(temp=="ON/C"))
+                {
+                    tai=0;
+                    tex.setText("0");
+                    BiaoDaShi="";
+                    xianshi="";
 
+                    bianliang="";
+                    jinzhi=10;
+
+
+                    jieguo="";
+                    bianliangjinzhi=10;
 
                 }
                 if((tai==0)&&(temp=="OFF"))
@@ -199,93 +215,108 @@ public class tryone {
                     tai=1;
                     bianliang="";
                     jinzhi=10;
+                    jieguo="";
+
                 }
 
 
                 //如果开机了
                 if(tai==0)
                 {
-
-
                     if(temp=="HEX")
                     {
                         if(bianliang!="")
                         {
-                            //BiaoDaShi+=bianliang;
-                            int temp1=Integer.parseInt(bianliang);
-                            String temp2=Integer.toHexString(temp1);
-                            xianshi=""+temp2;
-                            //bianliang=""+temp2;
-                            tex.setText(xianshi);
-                            //bianliang="";
+                            if(bianliangjinzhi==10)
+                            {
+
+                                System.out.println(bianliang);
+                                int temp1=Integer.parseInt(bianliang);
+                                String temp2=Integer.toHexString(temp1);
+                                xianshi=""+temp2;
+                                tex.setText(xianshi);
+                                System.out.println(bianliang);
+                            }
+                            if(bianliangjinzhi==16)
+                            {
+
+
+                                xianshi=bianliang;
+                                tex.setText(xianshi);
+
+                            }
                         }
                         if(jieguo!="")
                         {
-                            //BiaoDaShi+=bianliang;
+
                             int temp1=Integer.parseInt(jieguo);
                             String temp2=Integer.toHexString(temp1);
                             xianshi=""+temp2;
-                            //bianliang=""+temp2;
+
                             tex.setText(xianshi);
-                            //bianliang="";
+
                         }
                         jinzhi=16;
+
                     }
 
                     if(temp=="DEC")
                     {
                         if(bianliang!="")
                         {
-                            //BiaoDaShi+=bianliang;
-                            //int temp1=Integer.parseInt(bianliang);
-                            //String temp2=""+Integer.parseInt(bianliang,16);
+                            if(bianliangjinzhi==10)
+                            {
+                                xianshi=bianliang;
+                                tex.setText(xianshi);
+                                System.out.println(bianliang);
+                            }
+                            if(bianliangjinzhi==16)
+                            {
+                                xianshi=""+Integer.parseInt(bianliang,16);
+                                tex.setText(xianshi);
+                                System.out.println(bianliang);
 
-                            xianshi=bianliang;
-                            //bianliang=""+temp2;
-                            tex.setText(xianshi);
-                            //bianliang="";
+                            }
+
+
                         }
                         if(jieguo!="")
                         {
-                            //BiaoDaShi+=bianliang;
-                            //int temp1=Integer.parseInt(bianliang);
-                            //String temp2=""+Integer.parseInt(bianliang,16);
 
                             xianshi=jieguo;
-                            //bianliang=""+temp2;
                             tex.setText(xianshi);
-                            //bianliang="";
                         }
                         jinzhi=10;
+
+
                     }
 
 
 
                     if(jinzhi==10)
                     {
+
                         if(Character.isDigit(temp.charAt(0)))
                         {
                             bianliang+=temp;
                             xianshi+=temp;
                             tex.setText(xianshi);
-                            //System.out.println(BiaoDaShi);
+                            bianliangjinzhi=10;
                         }
                         if((temp=="A")||(temp=="b")||(temp=="C")||(temp=="d")||(temp=="E")||(temp=="K"))
                         {
                             bianliang+=temp;
                             xianshi+=temp;
                             tex.setText(xianshi);
-                            //System.out.println(BiaoDaShi);
+                            bianliangjinzhi=10;
                         }
                         if(temp=="×")
                         {
                             BiaoDaShi+=bianliang;
                             BiaoDaShi+="*";
-                            //xianshi+="×";
                             tex.setText(xianshi);
                             xianshi="";
                             bianliang="";
-                            //System.out.println(BiaoDaShi);
                         }
                         if(temp=="÷")
                         {
@@ -331,7 +362,7 @@ public class tryone {
                         }
                         if(temp=="=")
                         {
-                            bianliang="";
+                            jieguo="";
                             BiaoDaShi+=bianliang;
                             System.out.println(BiaoDaShi);
 
@@ -349,12 +380,14 @@ public class tryone {
                     }
                     if(jinzhi==16)
                     {
+
                         if(Character.isDigit(temp.charAt(0)))
                         {
                             bianliang+=temp;
                             xianshi+=temp;
                             tex.setText(xianshi);
                             //System.out.println(BiaoDaShi);
+                            bianliangjinzhi=16;
                         }
                         if((temp=="A")||(temp=="b")||(temp=="C")||(temp=="d")||(temp=="E")||(temp=="K"))
                         {
@@ -362,6 +395,7 @@ public class tryone {
                             xianshi+=temp;
                             tex.setText(xianshi);
                             //System.out.println(BiaoDaShi);
+                            bianliangjinzhi=16;
                         }
                         if(temp=="×")
                         {
@@ -438,10 +472,10 @@ public class tryone {
                             System.out.println(BiaoDaShi);
 
                             BaseCount count1=new BaseCount(BiaoDaShi);
-                            BiaoDaShi=""+count1.Count();
-                            xianshi=""+count1.Count();
-                            tex.setText(count1.Count());
                             jieguo=""+count1.Count();
+                            xianshi=""+Integer.toHexString(Integer.parseInt(jieguo) )   ;
+                            tex.setText(xianshi);
+
                             bianliang="";
                             BiaoDaShi="";
                             xianshi="";
